@@ -1,0 +1,50 @@
+//SASS variables
+
+
+//CSS variables
+:root {}
+
+
+//Dark theme
+@media (prefers-color-schema: dark) {}
+
+
+//Maps
+$breakpoints: (
+    mobile: 768px,
+    tablet: 992px,
+    laptop: 993px,
+    desktop: 1150px
+);
+
+//Normalization and typography
+*,
+::before,
+::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+//Mixins 
+
+@mixin center-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin center-flex-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin mobile-only {
+    @media screen and (max-width: map-get($breakpoints, mobile)) {
+        @content;
+    }
+}
+
+//Styles
