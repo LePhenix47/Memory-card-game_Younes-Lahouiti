@@ -1,12 +1,43 @@
 //SASS variables
+$body-bg-color-primary: #d17608;
+$body-bg-color-secondary: #ec3503;
+$body-bg-color-primary--dark-theme: darken(#d17608, 10%);
+$body-bg-color-secondary--dark-theme: darken(#ec3503, 20%);
+$text-color: white;
 
 
 //CSS variables
-:root {}
+:root {
+    --body-bg-color-primary: #{$body-bg-color-primary};
+    --body-bg-color-secondary: #{$body-bg-color-secondary};
+    --body-bg-color-primary--dark-theme: #{$body-bg-color-primary--dark-theme};
+    --body-bg-color-secondary--dark-theme: #{$body-bg-color-secondary--dark-theme};
+    --text-color: #{$text-color};
+}
 
 
 //Dark theme
-@media (prefers-color-schema: dark) {}
+@media (prefers-color-schema: dark) {
+    //SASS variables
+    $body-bg-color-primary: #d17608;
+    $body-bg-color-secondary: #ec3503;
+    $body-bg-color-primary--dark-theme: darken(#d17608, 10%);
+    $body-bg-color-secondary--dark-theme: darken(#ec3503, 20%);
+    $text-color: black;
+
+    //CSS variables
+    :root {
+        --body-bg-color-primary: #{$body-bg-color-primary};
+        --body-bg-color-secondary: #{$body-bg-color-secondary};
+        --body-bg-color-primary--dark-theme: #{$body-bg-color-primary--dark-theme};
+        --body-bg-color-secondary--dark-theme: #{$body-bg-color-secondary--dark-theme};
+        --text-color: #{$text-color};
+    }
+
+    body {
+        background-position: 100% 0% !important;
+    }
+}
 
 
 //Maps
@@ -24,7 +55,9 @@ $breakpoints: (
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    // transition: all 500ms ease-out;
 }
+
 
 //Mixins 
 
@@ -47,4 +80,75 @@ $breakpoints: (
     }
 }
 
+
+@mixin grid($rows: 1, $columns: 1) {
+    display: grid;
+    grid-template-rows: repeat($rows, 1fr);
+    grid-template-columns: repeat($columns, 1fr);
+    gap: 10px;
+}
+
+@mixin card-styling {
+    width: 100%;
+    height: 150px;
+    outline: 1px solid var(--text-color);
+}
+
+
 //Styles
+
+body {
+    transition: background-position 450ms ease-out;
+    min-height: 100vh;
+    overflow: hidden;
+    background-position: 0% 0%;
+    background-image: linear-gradient(to right, var(--body-bg-color-primary), var(--body-bg-color-secondary), var(--body-bg-color-primary--dark-theme), var(--body-bg-color-secondary--dark-theme));
+    background-size: 400% 100%;
+    font-family: 'Lato';
+    color: var(--text-color);
+}
+
+.main {
+    @include center-flex-column;
+
+    &__sentences-container {
+        margin-bottom: 50px;
+
+        &>* {
+            text-align: center;
+        }
+    }
+
+    &__title {
+        margin-top: 50px;
+        font-size: 60px;
+        font-weight: 800;
+        font-family: 'Raleway';
+
+        &>span {
+            font-weight: 300;
+        }
+    }
+
+    &__paragraph {
+        margin-block: 15px;
+
+        &:nth-child(1) {
+            font-size: 24px;
+        }
+
+        &:nth-child(2) {
+            font-size: 18px
+        }
+    }
+
+    &__cards-container {
+        @include grid(3, 4);
+        width: 75%;
+        height: 300px;
+    }
+
+    &__card {
+        @include card-styling;
+    }
+}
