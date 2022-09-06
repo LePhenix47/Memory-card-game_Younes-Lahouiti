@@ -5,14 +5,21 @@ $body-bg-color-primary--dark-theme: hsl(193, 85%, 20%);
 $body-bg-color-secondary--dark-theme: hsl(213, 69%, 10%);
 $text-color: white;
 
+$near-transparent: rgba(0, 0, 0, 0.1);
 $shadow-color: #00000033;
 $card-bg-color: white;
 
 $selection-bg-color: #0041b3;
 $selection-text-color: white;
 
+$before-bg-color: #ffbe4c;
+$before-bg-color--checked: #0041b3;
+$after-bg-color: black;
+$after-bg-color--checked: white;
+
 
 //CSS variables
+
 :root {
     --body-bg-color-primary: #{$body-bg-color-primary};
     --body-bg-color-secondary: #{$body-bg-color-secondary};
@@ -25,23 +32,76 @@ $selection-text-color: white;
     --selection-bg-color: #{$selection-bg-color};
     --selection-text-color: #{$selection-text-color};
 
+    --near-transparent: #{$near-transparent};
+
+    --before-bg-color: #{$before-bg-color};
+    --before-bg-color--checked: #{$before-bg-color--checked};
+
+    --after-bg-color: #{$after-bg-color};
+    --after-bg-color--checked: #{$after-bg-color--checked};
+}
+
+//
+@mixin hideElement {
+    height: 0;
+    width: 0;
+    opacity: 0;
+    visibility: hidden;
+}
+
+@mixin showElement {
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    opacity: 1;
+    visibility: visible;
 }
 
 
 //Dark theme
 @media (prefers-color-scheme: dark) {
+    //SASS variables
+    $body-bg-color-primary: #d17608;
+    $body-bg-color-secondary: #ec3503;
+    $body-bg-color-primary--dark-theme: hsl(193, 85%, 20%);
+    $body-bg-color-secondary--dark-theme: hsl(213, 69%, 10%);
+    $text-color: white;
+
+    $near-transparent: rgba(0, 0, 0, 0.1);
+
     $shadow-color: #ffffff33;
     $card-bg-color: black;
 
     $selection-bg-color: #ffbe4c;
     $selection-text-color: black;
 
+    $before-bg-color: #0041b3;
+    $before-bg-color--checked: #ffbe4c;
+    $after-bg-color: white;
+    $after-bg-color--checked: black;
+
     :root {
+        --body-bg-color-primary: #{$body-bg-color-primary};
+        --body-bg-color-secondary: #{$body-bg-color-secondary};
+        --body-bg-color-primary--dark-theme: #{$body-bg-color-primary--dark-theme};
+        --body-bg-color-secondary--dark-theme: #{$body-bg-color-secondary--dark-theme};
+        --text-color: #{$text-color};
         --shadow-color: #{$shadow-color};
         --card-bg-color: #{$card-bg-color};
 
         --selection-bg-color: #{$selection-bg-color};
         --selection-text-color: #{$selection-text-color};
+
+        --near-transparent: #{$near-transparent};
+
+        --before-bg-color: #{$before-bg-color};
+        --before-bg-color--checked: #{$before-bg-color--checked};
+
+        --after-bg-color: #{$after-bg-color};
+        --after-bg-color--checked: #{$after-bg-color--checked};
     }
 
     body {
@@ -54,21 +114,31 @@ $selection-text-color: white;
     }
 
     .moon-icon {
-        display: none !important;
+        @include showElement;
+        position: absolute;
     }
 
     .sun-icon {
-        display: block !important;
+        @include hideElement;
+        position: absolute;
     }
 
 }
 
 .moon-icon {
-    display: block;
+    @include hideElement;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
 }
 
 .sun-icon {
-    display: none;
+    @include showElement;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
 }
 
 
@@ -85,7 +155,13 @@ $selection-text-color: white;
     $selection-bg-color: #ffbe4c;
     $selection-text-color: black;
 
+    $before-bg-color: #ffbe4c;
+    $before-bg-color--checked: #0041b3;
+    $after-bg-color: black;
+    $after-bg-color--checked: white;
+
     //CSS variables
+
     :root {
         --body-bg-color-primary: #{$body-bg-color-primary};
         --body-bg-color-secondary: #{$body-bg-color-secondary};
@@ -98,11 +174,18 @@ $selection-text-color: white;
         --selection-bg-color: #{$selection-bg-color};
         --selection-text-color: #{$selection-text-color};
 
+        --near-transparent: #{$near-transparent};
+
+        --before-bg-color: #{$before-bg-color};
+        --before-bg-color--checked: #{$before-bg-color--checked};
+
+        --after-bg-color: #{$after-bg-color};
+        --after-bg-color--checked: #{$after-bg-color--checked};
     }
 
     body {
         // background-position: 100% 0% !important;
-        background-position: 100% 0%;
+        background-position: 100% 0% !important;
     }
 
     .theme {
@@ -120,14 +203,20 @@ $selection-text-color: white;
     $body-bg-color-secondary--dark-theme: hsl(213, 69%, 10%);
     $text-color: white;
 
+    $near-transparent: rgba(0, 0, 0, 0.1);
     $shadow-color: #00000033;
     $card-bg-color: white;
 
     $selection-bg-color: #0041b3;
     $selection-text-color: white;
 
+    $before-bg-color: #ffbe4c;
+    $before-bg-color--checked: #0041b3;
+    $after-bg-color: black;
+    $after-bg-color--checked: white;
 
     //CSS variables
+
     :root {
         --body-bg-color-primary: #{$body-bg-color-primary};
         --body-bg-color-secondary: #{$body-bg-color-secondary};
@@ -140,11 +229,17 @@ $selection-text-color: white;
         --selection-bg-color: #{$selection-bg-color};
         --selection-text-color: #{$selection-text-color};
 
+        --near-transparent: #{$near-transparent};
+
+        --before-bg-color: #{$before-bg-color};
+        --before-bg-color--checked: #{$before-bg-color--checked};
+
+        --after-bg-color: #{$after-bg-color};
+        --after-bg-color--checked: #{$after-bg-color--checked};
     }
 
     body {
-        // background-position: 100% 0% !important;
-        background-position: 0% 0%;
+        background-position: 0% 0% !important;
     }
 }
 
@@ -167,13 +262,35 @@ $breakpoints: (
     // transition: all 500ms ease-out;
 }
 
+*::-moz-selection {
+    -webkit-text-stroke: 0px;
+    background-color: var(--selection-bg-color);
+    color: var(--selection-text-color);
+}
+
 *::selection {
     -webkit-text-stroke: 0px;
     background-color: var(--selection-bg-color);
     color: var(--selection-text-color);
 }
 
+button {
+    border: none;
+}
+
+$outline-color-keyboard-key: #eee;
+$bg-color-keyboard-key: #0f1214;
+
+kbd {
+    border-radius: 2px;
+    outline: 1px solid $outline-color-keyboard-key;
+    padding: 1px;
+    margin: 0 2px;
+    background-color: $bg-color-keyboard-key;
+}
+
 //Mixins 
+
 
 @mixin center-flex {
     display: flex;
@@ -213,6 +330,7 @@ $breakpoints: (
     perspective-origin: top;
 
     &:hover {
+        cursor: pointer;
         scale: 105%;
     }
 }
@@ -226,14 +344,23 @@ $breakpoints: (
     left: 0%;
     width: 100%;
     height: 100%;
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     @include center-flex;
-    pointer-events: none; //So that we can select the entire card
+    pointer-events: none; //So that we can ONLY select the entire card and neither of the faces
+    transition:
+        background-color 450ms ease-out,
+        transform 550ms ease-in-out,
+        opacity 450ms ease-out;
+
+
 
     &>img {
         width: 90%;
         height: 90%;
+        -o-object-fit: cover;
         object-fit: cover;
+        -o-object-position: center;
         object-position: center;
     }
 }
@@ -246,20 +373,25 @@ body {
         background-position 550ms ease-out;
     min-height: 100vh;
     overflow-x: hidden;
-    // background-position: 0% 0%;
     background-image: linear-gradient(to right, var(--body-bg-color-primary), var(--body-bg-color-secondary), var(--body-bg-color-primary--dark-theme), var(--body-bg-color-secondary--dark-theme));
     background-size: 350% 100%;
     font-family: 'Lato';
     color: var(--text-color);
 }
 
-button {
-    border: none;
-}
+
 
 
 .theme {
     position: fixed;
+
+    @include mobile-only {
+        position: inherit;
+        width: 100%;
+        height: 50px;
+        border-radius: 0%;
+    }
+
     top: 0;
     left: 0;
     background-image: linear-gradient(to right, var(--body-bg-color-primary), var(--body-bg-color-secondary), var(--body-bg-color-primary--dark-theme), var(--body-bg-color-secondary--dark-theme));
@@ -271,19 +403,19 @@ button {
     @include center-flex-column;
     z-index: 70;
     transition: all 350ms ease-out;
-    translate: -60px -60px;
+    // translate: -60px -60px;
 
     &:hover {
         translate: 0px 0px;
     }
 
-    &__blurred-bg {
-        position: absolute;
-        top: 0%;
-        left: 0%;
-        z-index: -69;
-        backdrop-filter: blur(0px);
-        transition: backdrop-filter 350ms ease-out;
+    &:hover+.blurred-bg {
+        background-color: var(--near-transparent);
+
+        -webkit-backdrop-filter: blur(2px);
+
+        backdrop-filter: blur(2px);
+        z-index: 50;
     }
 
     &__toggler {
@@ -294,39 +426,88 @@ button {
         padding: 5px;
         z-index: 72;
 
-        &:hover+.theme__blurred-bg {
-            top: 0%;
-            left: 0%;
-            width: 200vw;
-            height: 200vh;
-            border-radius: 0%;
-            backdrop-filter: blur(5px);
-        }
-
-        &-button {
+        &-label {
             background-color: transparent;
-            border-radius: 50%;
             aspect-ratio: 1/1;
             height: 55px;
-            outline: 2px solid var(--text-color);
-
-            &>i {
-                font-size: 38px;
-                color: var(--text-color);
-            }
+            position: relative;
+            @include center-flex;
 
             &:hover {
                 cursor: pointer;
+            }
+
+            &::before {
+
+                content: "";
+                display: inline-block;
+                width: 100%;
+                height: 25px;
+                background-color: var(--before-bg-color);
+                border-radius: 100vmax;
+                transition: background-color 200ms ease-out;
+
+            }
+
+            &::after {
+                position: absolute;
+                content: "";
+                display: inline-block;
+                aspect-ratio: 1/1;
+                height: 20px;
+                background-color: var(--after-bg-color);
+                border-radius: 50%;
+                left: 43%;
+                top: 50%;
+                translate: -100% -50%;
+                transition:
+                    translate 200ms ease-out,
+                    top 200ms ease-out,
+                    left 200ms ease-out;
+            }
+
+        }
+
+        &-checkbox {
+            display: none;
+
+            &:checked+.theme__toggler-label::after {
+                translate: 40% -50%;
+                background-color: var(--after-bg-color--checked);
+            }
+
+            &:checked+.theme__toggler-label::before {
+                background-color: var(--before-bg-color--checked);
             }
         }
     }
 }
 
 
+.blurred-bg {
+    @include mobile-only {
+        display: none;
+    }
+
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: transparent;
+    -webkit-backdrop-filter: blur(0px);
+    backdrop-filter: blur(0px);
+    transition: -webkit-backdrop-filter 350ms ease-out;
+    transition: backdrop-filter 350ms ease-out;
+    transition: backdrop-filter 350ms ease-out,
+    -webkit-backdrop-filter 350ms ease-out;
+    transition: backdrop-filter 350ms ease-out,
+    -webkit-backdrop-filter 350ms ease-out;
+}
+
 .main {
     @include center-flex-column;
 
     min-height: 100vh;
+    z-index: 49;
 
     &__sentences-container {
         margin-bottom: 50px;
@@ -337,7 +518,7 @@ button {
     }
 
     &__title {
-        margin-top: 50px;
+        margin-top: 25px;
         font-size: 60px;
         font-weight: 800;
         font-family: 'Raleway';
@@ -378,27 +559,23 @@ button {
     &__card {
         @include card-styling;
 
-        &:active>.main__card-front {
-            transform: rotateY(0deg);
-        }
+        // &:active>.main__card-front {
+        //     transform: rotateY(0deg);
+        // }
 
-        &:active>.main__card-back {
-            transform: rotateY(-180deg);
-        }
+        // &:active>.main__card-back {
+        //     transform: rotateY(-180deg);
+        // }
 
         &-front {
             @include card-faces-styling;
             transform: rotateY(180deg);
-            transition: transform 550ms ease-in-out;
 
         }
 
         &-back {
             @include card-faces-styling;
-            transition:
-                background-color 450ms ease-out,
-                transform 550ms ease-in-out,
-                opacity 450ms ease-out;
+
 
 
         }
@@ -412,5 +589,23 @@ button {
 
     &>.main__card-back {
         transform: rotateY(-180deg);
+    }
+}
+
+.restart-paragraph {
+    &--widescreen {
+        display: block;
+
+        @include mobile-only {
+            display: none;
+        }
+    }
+
+    &--mobile {
+        display: none;
+
+        @include mobile-only {
+            display: block;
+        }
     }
 }

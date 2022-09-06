@@ -67,7 +67,6 @@ function verifyResult() {
 
 const adviceParagraph = document.querySelector(".advice-paragraph");
 const attemptsParagraph = document.querySelector(".attempts-paragraph");
-const scoreElement = document.querySelector(".attempts-paragraph>span");
 
 const restartParagraphsArray = document.querySelectorAll(".restart-paragraph");
 
