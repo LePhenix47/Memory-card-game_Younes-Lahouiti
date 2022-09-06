@@ -142,6 +142,114 @@ $after-bg-color--checked: white;
     }
 }
 
+
+.dark-theme {
+    //SASS variables
+    $body-bg-color-primary: #d17608;
+    $body-bg-color-secondary: #ec3503;
+    $body-bg-color-primary--dark-theme: hsl(193, 85%, 20%);
+    $body-bg-color-secondary--dark-theme: hsl(213, 69%, 10%);
+    $text-color: white;
+
+    $near-transparent: rgba(0, 0, 0, 0.1);
+
+    $shadow-color: #ffffff33;
+    $card-bg-color: black;
+
+    $selection-bg-color: #ffbe4c;
+    $selection-text-color: black;
+
+    $before-bg-color: #ffbe4c;
+    $before-bg-color--checked: #0041b3;
+    $after-bg-color: black;
+    $after-bg-color--checked: white;
+
+    :root {
+        --body-bg-color-primary: #{$body-bg-color-primary};
+        --body-bg-color-secondary: #{$body-bg-color-secondary};
+        --body-bg-color-primary--dark-theme: #{$body-bg-color-primary--dark-theme};
+        --body-bg-color-secondary--dark-theme: #{$body-bg-color-secondary--dark-theme};
+        --text-color: #{$text-color};
+        --shadow-color: #{$shadow-color};
+        --card-bg-color: #{$card-bg-color};
+
+        --selection-bg-color: #fff;
+        --selection-text-color: #{$selection-text-color};
+
+        --near-transparent: #{$near-transparent};
+
+        --before-bg-color: #{$before-bg-color};
+        --before-bg-color--checked: #{$before-bg-color--checked};
+
+        --after-bg-color: #{$after-bg-color};
+        --after-bg-color--checked: #{$after-bg-color--checked};
+    }
+
+    body {
+        background-position: 100% 0% !important;
+        // background-position: 100% 0%;
+    }
+
+    .theme {
+        background-position: 0% 0% !important;
+    }
+}
+
+.light-theme {
+    //SASS variables
+    $body-bg-color-primary: #d17608;
+    $body-bg-color-secondary: #ec3503;
+    $body-bg-color-primary--dark-theme: hsl(193, 85%, 20%);
+    $body-bg-color-secondary--dark-theme: hsl(213, 69%, 10%);
+    $text-color: white;
+
+    $near-transparent: rgba(0, 0, 0, 0.1);
+    $shadow-color: #00000033;
+    $card-bg-color: white;
+
+    $selection-bg-color: #0041b3;
+    $selection-text-color: white;
+
+    $before-bg-color: #ffbe4c;
+    $before-bg-color--checked: #0041b3;
+    $after-bg-color: black;
+    $after-bg-color--checked: white;
+
+
+    //CSS variables
+
+    :root {
+        --body-bg-color-primary: #{$body-bg-color-primary};
+        --body-bg-color-secondary: #{$body-bg-color-secondary};
+        --body-bg-color-primary--dark-theme: #{$body-bg-color-primary--dark-theme};
+        --body-bg-color-secondary--dark-theme: #{$body-bg-color-secondary--dark-theme};
+        --text-color: #{$text-color};
+        --shadow-color: #{$shadow-color};
+        --card-bg-color: #{$card-bg-color};
+
+        --selection-bg-color: #{$selection-bg-color};
+        --selection-text-color: #{$selection-text-color};
+
+        --near-transparent: #{$near-transparent};
+
+        --before-bg-color: #{$before-bg-color};
+        --before-bg-color--checked: #{$before-bg-color--checked};
+
+        --after-bg-color: #{$after-bg-color};
+        --after-bg-color--checked: #{$after-bg-color--checked};
+    }
+
+    body {
+        background-position: 100% 0% !important;
+        // background-position: 100% 0%;
+    }
+
+    .theme {
+        background-position: 0% 0% !important;
+    }
+}
+
+
 //Maps
 $breakpoints: (
     mobile: 768px,
@@ -271,6 +379,12 @@ body {
         background-position 550ms ease-out;
     min-height: 100vh;
     overflow-x: hidden;
+    overflow-y: hidden;
+
+    @include mobile-only {
+        overflow-y: scroll;
+    }
+
     background-image: linear-gradient(to right, var(--body-bg-color-primary), var(--body-bg-color-secondary), var(--body-bg-color-primary--dark-theme), var(--body-bg-color-secondary--dark-theme));
     background-size: 350% 100%;
     font-family: 'Lato';
@@ -290,7 +404,6 @@ body {
 
     top: 0;
     left: 0;
-    background-image: linear-gradient(to right, var(--body-bg-color-primary), var(--body-bg-color-secondary), var(--body-bg-color-primary--dark-theme), var(--body-bg-color-secondary--dark-theme));
     background-size: 350% 100%;
     background-position: 100% 0;
     height: 125px;
@@ -309,7 +422,8 @@ body {
         background-color: var(--near-transparent);
 
         -webkit-backdrop-filter: blur(2px);
-        translate: 0% 0%;
+        // translate: 0% 0%;
+        scale: 100%;
         backdrop-filter: blur(2px);
         z-index: 50;
     }
@@ -386,13 +500,15 @@ body {
     }
 
     position: absolute;
-    width: 100vw;
-    height: 100vh;
+    width: 200vw;
+    height: 200vh;
     background-color: transparent;
-    translate: -100% 0%;
+    // translate: -100% 0%;
+    scale: 0%;
+    transform-origin: top left;
     //
     transition: backdrop-filter 350ms ease-out,
-    translate 350ms ease-in;
+    scale 350ms ease-in;
     //
 }
 
