@@ -7,10 +7,10 @@ themeTogglerButton.addEventListener("click", switchTheme);
 let usesDarkMode = false;
 
 function switchTheme(e) {
-  if (usesDarkMode) {
-    body.classList.add("light-theme");
+  if (body.classList.contains("dark-theme")) {
+    body.classList.replace("dark-theme", "light-theme");
   } else {
-    body.classList.add("dark-theme");
+    body.classList.replace("light-theme", "dark-theme");
   }
 
   console.log(body.classList);
@@ -24,6 +24,11 @@ function checkTheBoxIfDarkMode() {
     console.log("Users uses dark mode");
     checkboxToggler.checked = true;
     usesDarkMode = true;
+    if (usesDarkMode) {
+      body.classList.add("dark-theme");
+    } else {
+      body.classList.add("light-theme");
+    }
   }
 }
 
