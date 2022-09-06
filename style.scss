@@ -309,7 +309,7 @@ body {
         background-color: var(--near-transparent);
 
         -webkit-backdrop-filter: blur(2px);
-
+        translate: 0% 0%;
         backdrop-filter: blur(2px);
         z-index: 50;
     }
@@ -391,14 +391,23 @@ body {
     background-color: transparent;
     -webkit-backdrop-filter: blur(0px);
     backdrop-filter: blur(0px);
-    transition: -webkit-backdrop-filter 350ms ease-out;
-    transition: backdrop-filter 350ms ease-out;
-    transition: backdrop-filter 350ms ease-out,
+
+
+    transition: translate 150ms 250ms ease-in,
     -webkit-backdrop-filter 350ms ease-out;
+
+
     transition: backdrop-filter 350ms ease-out,
-    -webkit-backdrop-filter 350ms ease-out;
+    translate 150ms 250ms ease-in;
+
+
     transition: backdrop-filter 350ms ease-out,
+    translate 150ms 250ms ease-in,
     -webkit-backdrop-filter 350ms ease-out;
+
+
+
+
 }
 
 .main {
