@@ -5,8 +5,11 @@ $body-bg-color-primary--dark-theme: hsl(193, 85%, 20%);
 $body-bg-color-secondary--dark-theme: hsl(213, 69%, 10%);
 $text-color: white;
 
-$shadow-color: rgba(0, 0, 0, 0.2);
+$shadow-color: #00000033;
 $card-bg-color: white;
+
+$selection-bg-color: #0041b3;
+$selection-text-color: white;
 
 
 //CSS variables
@@ -18,23 +21,131 @@ $card-bg-color: white;
     --text-color: #{$text-color};
     --shadow-color: #{$shadow-color};
     --card-bg-color: #{$card-bg-color};
+
+    --selection-bg-color: #{$selection-bg-color};
+    --selection-text-color: #{$selection-text-color};
+
 }
 
 
 //Dark theme
 @media (prefers-color-scheme: dark) {
-    $shadow-color: rgba(255, 255, 255, 0.2);
+    $shadow-color: #ffffff33;
     $card-bg-color: black;
+
+    $selection-bg-color: #ffbe4c;
+    $selection-text-color: black;
 
     :root {
         --shadow-color: #{$shadow-color};
         --card-bg-color: #{$card-bg-color};
+
+        --selection-bg-color: #{$selection-bg-color};
+        --selection-text-color: #{$selection-text-color};
     }
 
     body {
-        background-position: 100% 0% !important;
+        // background-position: 100% 0% !important;
+        background-position: 100% 0%;
     }
 
+    .theme {
+        background-position: 0% 0% !important;
+    }
+
+    .moon-icon {
+        display: none !important;
+    }
+
+    .sun-icon {
+        display: block !important;
+    }
+
+}
+
+.moon-icon {
+    display: block;
+}
+
+.sun-icon {
+    display: none;
+}
+
+
+
+.dark {
+    $body-bg-color-primary: #d17608;
+    $body-bg-color-secondary: #ec3503;
+    $body-bg-color-primary--dark-theme: hsl(193, 85%, 20%);
+    $body-bg-color-secondary--dark-theme: hsl(213, 69%, 10%);
+    $text-color: white;
+    $shadow-color: #ffffff33;
+    $card-bg-color: black;
+
+    $selection-bg-color: #ffbe4c;
+    $selection-text-color: black;
+
+    //CSS variables
+    :root {
+        --body-bg-color-primary: #{$body-bg-color-primary};
+        --body-bg-color-secondary: #{$body-bg-color-secondary};
+        --body-bg-color-primary--dark-theme: #{$body-bg-color-primary--dark-theme};
+        --body-bg-color-secondary--dark-theme: #{$body-bg-color-secondary--dark-theme};
+        --text-color: #{$text-color};
+        --shadow-color: #{$shadow-color};
+        --card-bg-color: #{$card-bg-color};
+
+        --selection-bg-color: #{$selection-bg-color};
+        --selection-text-color: #{$selection-text-color};
+
+    }
+
+    body {
+        // background-position: 100% 0% !important;
+        background-position: 100% 0%;
+    }
+
+    .theme {
+        // background-position: 100% 0% !important;
+        background-position: 0% 0% !important;
+    }
+}
+
+
+.light {
+    //SASS variables
+    $body-bg-color-primary: #d17608;
+    $body-bg-color-secondary: #ec3503;
+    $body-bg-color-primary--dark-theme: hsl(193, 85%, 20%);
+    $body-bg-color-secondary--dark-theme: hsl(213, 69%, 10%);
+    $text-color: white;
+
+    $shadow-color: #00000033;
+    $card-bg-color: white;
+
+    $selection-bg-color: #0041b3;
+    $selection-text-color: white;
+
+
+    //CSS variables
+    :root {
+        --body-bg-color-primary: #{$body-bg-color-primary};
+        --body-bg-color-secondary: #{$body-bg-color-secondary};
+        --body-bg-color-primary--dark-theme: #{$body-bg-color-primary--dark-theme};
+        --body-bg-color-secondary--dark-theme: #{$body-bg-color-secondary--dark-theme};
+        --text-color: #{$text-color};
+        --shadow-color: #{$shadow-color};
+        --card-bg-color: #{$card-bg-color};
+
+        --selection-bg-color: #{$selection-bg-color};
+        --selection-text-color: #{$selection-text-color};
+
+    }
+
+    body {
+        // background-position: 100% 0% !important;
+        background-position: 0% 0%;
+    }
 }
 
 
@@ -56,6 +167,11 @@ $breakpoints: (
     // transition: all 500ms ease-out;
 }
 
+*::selection {
+    -webkit-text-stroke: 0px;
+    background-color: var(--selection-bg-color);
+    color: var(--selection-text-color);
+}
 
 //Mixins 
 
@@ -93,7 +209,7 @@ $breakpoints: (
     border-radius: 4px;
     transition:
         scale 250ms ease-out;
-    perspective: 2000px;
+    perspective: 1500px;
     perspective-origin: top;
 
     &:hover {
@@ -112,6 +228,7 @@ $breakpoints: (
     height: 100%;
     backface-visibility: hidden;
     @include center-flex;
+    pointer-events: none; //So that we can select the entire card
 
     &>img {
         width: 90%;
@@ -129,12 +246,82 @@ body {
         background-position 550ms ease-out;
     min-height: 100vh;
     overflow-x: hidden;
-    background-position: 0% 0%;
+    // background-position: 0% 0%;
     background-image: linear-gradient(to right, var(--body-bg-color-primary), var(--body-bg-color-secondary), var(--body-bg-color-primary--dark-theme), var(--body-bg-color-secondary--dark-theme));
     background-size: 350% 100%;
     font-family: 'Lato';
     color: var(--text-color);
 }
+
+button {
+    border: none;
+}
+
+
+.theme {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-image: linear-gradient(to right, var(--body-bg-color-primary), var(--body-bg-color-secondary), var(--body-bg-color-primary--dark-theme), var(--body-bg-color-secondary--dark-theme));
+    background-size: 350% 100%;
+    background-position: 100% 0;
+    height: 125px;
+    width: 125px;
+    border-radius: 0 0 50% 0;
+    @include center-flex-column;
+    z-index: 70;
+    transition: all 350ms ease-out;
+    translate: -60px -60px;
+
+    &:hover {
+        translate: 0px 0px;
+    }
+
+    &__blurred-bg {
+        position: absolute;
+        top: 0%;
+        left: 0%;
+        z-index: -69;
+        backdrop-filter: blur(0px);
+        transition: backdrop-filter 350ms ease-out;
+    }
+
+    &__toggler {
+        width: inherit;
+        height: inherit;
+        text-align: center;
+        @include center-flex;
+        padding: 5px;
+        z-index: 72;
+
+        &:hover+.theme__blurred-bg {
+            top: 0%;
+            left: 0%;
+            width: 200vw;
+            height: 200vh;
+            border-radius: 0%;
+            backdrop-filter: blur(5px);
+        }
+
+        &-button {
+            background-color: transparent;
+            border-radius: 50%;
+            aspect-ratio: 1/1;
+            height: 55px;
+            outline: 2px solid var(--text-color);
+
+            &>i {
+                font-size: 38px;
+                color: var(--text-color);
+            }
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+}
+
 
 .main {
     @include center-flex-column;
@@ -154,9 +341,13 @@ body {
         font-size: 60px;
         font-weight: 800;
         font-family: 'Raleway';
+        -webkit-text-stroke: 2px var(--text-color);
+        color: transparent;
 
         &>span {
             font-weight: 300;
+            -webkit-text-stroke: 0px;
+            color: var(--text-color)
         }
 
     }
@@ -182,7 +373,6 @@ body {
 
         margin: 0 0 25px 0;
 
-        // background-color: purple;
     }
 
     &__card {
@@ -200,7 +390,6 @@ body {
             @include card-faces-styling;
             transform: rotateY(180deg);
             transition: transform 550ms ease-in-out;
-            // background-color: #fff;
 
         }
 
@@ -208,17 +397,20 @@ body {
             @include card-faces-styling;
             transition:
                 background-color 450ms ease-out,
-                transform 550ms ease-in-out;
-            // background-color: black;
+                transform 550ms ease-in-out,
+                opacity 450ms ease-out;
+
 
         }
     }
 }
 
-.show {
-    transform: rotateY(0deg);
-}
+.show-card {
+    &>.main__card-front {
+        transform: rotateY(0deg);
+    }
 
-.hide {
-    transform: rotateY(180deg);
+    &>.main__card-back {
+        transform: rotateY(-180deg);
+    }
 }
