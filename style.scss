@@ -41,24 +41,6 @@ $after-bg-color--checked: white;
     --after-bg-color--checked: #{$after-bg-color--checked};
 }
 
-//
-@mixin hideElement {
-    height: 0;
-    width: 0;
-    opacity: 0;
-    visibility: hidden;
-}
-
-@mixin showElement {
-    height: -webkit-fit-content;
-    height: -moz-fit-content;
-    height: fit-content;
-    width: -webkit-fit-content;
-    width: -moz-fit-content;
-    width: fit-content;
-    opacity: 1;
-    visibility: visible;
-}
 
 
 //Dark theme
@@ -78,10 +60,10 @@ $after-bg-color--checked: white;
     $selection-bg-color: #ffbe4c;
     $selection-text-color: black;
 
-    $before-bg-color: #0041b3;
-    $before-bg-color--checked: #ffbe4c;
-    $after-bg-color: white;
-    $after-bg-color--checked: black;
+    $before-bg-color: #ffbe4c;
+    $before-bg-color--checked: #0041b3;
+    $after-bg-color: black;
+    $after-bg-color--checked: white;
 
     :root {
         --body-bg-color-primary: #{$body-bg-color-primary};
@@ -113,89 +95,9 @@ $after-bg-color--checked: white;
         background-position: 0% 0% !important;
     }
 
-    .moon-icon {
-        @include showElement;
-        position: absolute;
-    }
-
-    .sun-icon {
-        @include hideElement;
-        position: absolute;
-    }
-
 }
 
-.moon-icon {
-    @include hideElement;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    translate: -50% -50%;
-}
-
-.sun-icon {
-    @include showElement;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    translate: -50% -50%;
-}
-
-
-
-.dark {
-    $body-bg-color-primary: #d17608;
-    $body-bg-color-secondary: #ec3503;
-    $body-bg-color-primary--dark-theme: hsl(193, 85%, 20%);
-    $body-bg-color-secondary--dark-theme: hsl(213, 69%, 10%);
-    $text-color: white;
-    $shadow-color: #ffffff33;
-    $card-bg-color: black;
-
-    $selection-bg-color: #ffbe4c;
-    $selection-text-color: black;
-
-    $before-bg-color: #ffbe4c;
-    $before-bg-color--checked: #0041b3;
-    $after-bg-color: black;
-    $after-bg-color--checked: white;
-
-    //CSS variables
-
-    :root {
-        --body-bg-color-primary: #{$body-bg-color-primary};
-        --body-bg-color-secondary: #{$body-bg-color-secondary};
-        --body-bg-color-primary--dark-theme: #{$body-bg-color-primary--dark-theme};
-        --body-bg-color-secondary--dark-theme: #{$body-bg-color-secondary--dark-theme};
-        --text-color: #{$text-color};
-        --shadow-color: #{$shadow-color};
-        --card-bg-color: #{$card-bg-color};
-
-        --selection-bg-color: #{$selection-bg-color};
-        --selection-text-color: #{$selection-text-color};
-
-        --near-transparent: #{$near-transparent};
-
-        --before-bg-color: #{$before-bg-color};
-        --before-bg-color--checked: #{$before-bg-color--checked};
-
-        --after-bg-color: #{$after-bg-color};
-        --after-bg-color--checked: #{$after-bg-color--checked};
-    }
-
-    body {
-        // background-position: 100% 0% !important;
-        background-position: 100% 0% !important;
-    }
-
-    .theme {
-        // background-position: 100% 0% !important;
-        background-position: 0% 0% !important;
-    }
-}
-
-
-.light {
+@media (prefers-color-scheme: light) {
     //SASS variables
     $body-bg-color-primary: #d17608;
     $body-bg-color-secondary: #ec3503;
@@ -215,6 +117,7 @@ $after-bg-color--checked: white;
     $after-bg-color: black;
     $after-bg-color--checked: white;
 
+
     //CSS variables
 
     :root {
@@ -237,12 +140,7 @@ $after-bg-color--checked: white;
         --after-bg-color: #{$after-bg-color};
         --after-bg-color--checked: #{$after-bg-color--checked};
     }
-
-    body {
-        background-position: 0% 0% !important;
-    }
 }
-
 
 //Maps
 $breakpoints: (
@@ -380,8 +278,6 @@ body {
 }
 
 
-
-
 .theme {
     position: fixed;
 
@@ -497,6 +393,8 @@ body {
     backdrop-filter: blur(0px);
     transition: -webkit-backdrop-filter 350ms ease-out;
     transition: backdrop-filter 350ms ease-out;
+    transition: backdrop-filter 350ms ease-out,
+    -webkit-backdrop-filter 350ms ease-out;
     transition: backdrop-filter 350ms ease-out,
     -webkit-backdrop-filter 350ms ease-out;
     transition: backdrop-filter 350ms ease-out,
