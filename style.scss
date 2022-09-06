@@ -41,108 +41,6 @@ $after-bg-color--checked: white;
     --after-bg-color--checked: #{$after-bg-color--checked};
 }
 
-
-
-//Dark theme
-@media (prefers-color-scheme: dark) {
-    //SASS variables
-    $body-bg-color-primary: #d17608;
-    $body-bg-color-secondary: #ec3503;
-    $body-bg-color-primary--dark-theme: hsl(193, 85%, 20%);
-    $body-bg-color-secondary--dark-theme: hsl(213, 69%, 10%);
-    $text-color: white;
-
-    $near-transparent: rgba(0, 0, 0, 0.1);
-
-    $shadow-color: #ffffff33;
-    $card-bg-color: black;
-
-    $selection-bg-color: #ffbe4c;
-    $selection-text-color: black;
-
-    $before-bg-color: #ffbe4c;
-    $before-bg-color--checked: #0041b3;
-    $after-bg-color: black;
-    $after-bg-color--checked: white;
-
-    :root {
-        --body-bg-color-primary: #{$body-bg-color-primary};
-        --body-bg-color-secondary: #{$body-bg-color-secondary};
-        --body-bg-color-primary--dark-theme: #{$body-bg-color-primary--dark-theme};
-        --body-bg-color-secondary--dark-theme: #{$body-bg-color-secondary--dark-theme};
-        --text-color: #{$text-color};
-        --shadow-color: #{$shadow-color};
-        --card-bg-color: #{$card-bg-color};
-
-        --selection-bg-color: #{$selection-bg-color};
-        --selection-text-color: #{$selection-text-color};
-
-        --near-transparent: #{$near-transparent};
-
-        --before-bg-color: #{$before-bg-color};
-        --before-bg-color--checked: #{$before-bg-color--checked};
-
-        --after-bg-color: #{$after-bg-color};
-        --after-bg-color--checked: #{$after-bg-color--checked};
-    }
-
-    body {
-        // background-position: 100% 0% !important;
-        background-position: 100% 0%;
-    }
-
-    .theme {
-        background-position: 0% 0% !important;
-    }
-
-}
-
-@media (prefers-color-scheme: light) {
-    //SASS variables
-    $body-bg-color-primary: #d17608;
-    $body-bg-color-secondary: #ec3503;
-    $body-bg-color-primary--dark-theme: hsl(193, 85%, 20%);
-    $body-bg-color-secondary--dark-theme: hsl(213, 69%, 10%);
-    $text-color: white;
-
-    $near-transparent: rgba(0, 0, 0, 0.1);
-    $shadow-color: #00000033;
-    $card-bg-color: white;
-
-    $selection-bg-color: #0041b3;
-    $selection-text-color: white;
-
-    $before-bg-color: #ffbe4c;
-    $before-bg-color--checked: #0041b3;
-    $after-bg-color: black;
-    $after-bg-color--checked: white;
-
-
-    //CSS variables
-
-    :root {
-        --body-bg-color-primary: #{$body-bg-color-primary};
-        --body-bg-color-secondary: #{$body-bg-color-secondary};
-        --body-bg-color-primary--dark-theme: #{$body-bg-color-primary--dark-theme};
-        --body-bg-color-secondary--dark-theme: #{$body-bg-color-secondary--dark-theme};
-        --text-color: #{$text-color};
-        --shadow-color: #{$shadow-color};
-        --card-bg-color: #{$card-bg-color};
-
-        --selection-bg-color: #{$selection-bg-color};
-        --selection-text-color: #{$selection-text-color};
-
-        --near-transparent: #{$near-transparent};
-
-        --before-bg-color: #{$before-bg-color};
-        --before-bg-color--checked: #{$before-bg-color--checked};
-
-        --after-bg-color: #{$after-bg-color};
-        --after-bg-color--checked: #{$after-bg-color--checked};
-    }
-}
-
-
 .dark-theme {
     //SASS variables
     $body-bg-color-primary: #d17608;
@@ -248,6 +146,106 @@ $after-bg-color--checked: white;
         background-position: 0% 0% !important;
     }
 }
+
+//Dark theme
+@media (prefers-color-scheme: dark) {
+    //SASS variables
+    $body-bg-color-primary: #d17608;
+    $body-bg-color-secondary: #ec3503;
+    $body-bg-color-primary--dark-theme: hsl(193, 85%, 20%);
+    $body-bg-color-secondary--dark-theme: hsl(213, 69%, 10%);
+    $text-color: white;
+
+    $near-transparent: rgba(0, 0, 0, 0.1);
+
+    $shadow-color: #ffffff33;
+    $card-bg-color: black;
+
+    $selection-bg-color: #ffbe4c;
+    $selection-text-color: black;
+
+    $before-bg-color: #ffbe4c;
+    $before-bg-color--checked: #0041b3;
+    $after-bg-color: black;
+    $after-bg-color--checked: white;
+
+    :root {
+        --body-bg-color-primary: #{$body-bg-color-primary};
+        --body-bg-color-secondary: #{$body-bg-color-secondary};
+        --body-bg-color-primary--dark-theme: #{$body-bg-color-primary--dark-theme};
+        --body-bg-color-secondary--dark-theme: #{$body-bg-color-secondary--dark-theme};
+        --text-color: #{$text-color};
+        --shadow-color: #{$shadow-color};
+        --card-bg-color: #{$card-bg-color};
+
+        --selection-bg-color: #{$selection-bg-color};
+        --selection-text-color: #{$selection-text-color};
+
+        --near-transparent: #{$near-transparent};
+
+        --before-bg-color: #{$before-bg-color};
+        --before-bg-color--checked: #{$before-bg-color--checked};
+
+        --after-bg-color: #{$after-bg-color};
+        --after-bg-color--checked: #{$after-bg-color--checked};
+    }
+
+    body {
+        // background-position: 100% 0% !important;
+        background-position: 100% 0%;
+    }
+
+    .theme {
+        background-position: 0% 0% !important;
+    }
+
+}
+
+
+// @media (prefers-color-scheme: light) {
+//     //SASS variables
+//     $body-bg-color-primary: #d17608;
+//     $body-bg-color-secondary: #ec3503;
+//     $body-bg-color-primary--dark-theme: hsl(193, 85%, 20%);
+//     $body-bg-color-secondary--dark-theme: hsl(213, 69%, 10%);
+//     $text-color: white;
+
+//     $near-transparent: rgba(0, 0, 0, 0.1);
+//     $shadow-color: #00000033;
+//     $card-bg-color: white;
+
+//     $selection-bg-color: #0041b3;
+//     $selection-text-color: white;
+
+//     $before-bg-color: #ffbe4c;
+//     $before-bg-color--checked: #0041b3;
+//     $after-bg-color: black;
+//     $after-bg-color--checked: white;
+
+
+//     //CSS variables
+
+//     :root {
+//         --body-bg-color-primary: #{$body-bg-color-primary};
+//         --body-bg-color-secondary: #{$body-bg-color-secondary};
+//         --body-bg-color-primary--dark-theme: #{$body-bg-color-primary--dark-theme};
+//         --body-bg-color-secondary--dark-theme: #{$body-bg-color-secondary--dark-theme};
+//         --text-color: #{$text-color};
+//         --shadow-color: #{$shadow-color};
+//         --card-bg-color: #{$card-bg-color};
+
+//         --selection-bg-color: #{$selection-bg-color};
+//         --selection-text-color: #{$selection-text-color};
+
+//         --near-transparent: #{$near-transparent};
+
+//         --before-bg-color: #{$before-bg-color};
+//         --before-bg-color--checked: #{$before-bg-color--checked};
+
+//         --after-bg-color: #{$after-bg-color};
+//         --after-bg-color--checked: #{$after-bg-color--checked};
+//     }
+// }
 
 
 //Maps

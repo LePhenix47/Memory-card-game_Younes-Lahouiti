@@ -24,11 +24,11 @@ function checkTheBoxIfDarkMode() {
     console.log("Users uses dark mode");
     checkboxToggler.checked = true;
     usesDarkMode = true;
-    if (usesDarkMode) {
-      body.classList.add("dark-theme");
-    } else {
-      body.classList.add("light-theme");
-    }
+  }
+  if (usesDarkMode) {
+    body.classList.add("dark-theme");
+  } else {
+    body.classList.add("light-theme");
   }
 }
 
