@@ -85,6 +85,10 @@ function setScore() {
     numberOfTries === 6
       ? (attemptsParagraph.textContent = `Final score: ${numberOfTries}, you hit the highest possible score, amazing!`)
       : (attemptsParagraph.textContent = `Final score: ${numberOfTries}`);
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
 
     return;
   }
