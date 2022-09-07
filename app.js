@@ -27,6 +27,8 @@ function flipCard(e) {
     .substring(0, valueOfFrontCard.indexOf(".svg"))
     .replace("./ressources/", ""); //We get the name of the fruit through their filename
 
+  //It'd be smarter to use the HTML data set attributes
+
   if (locked) {
     return;
   }
@@ -51,8 +53,9 @@ function saveCard(element, value) {
 function verifyResult() {
   setScore();
   if (pickedCards[0].value === pickedCards[1].value) {
-    pickedCards[0].element.parentElement.removeEventListener("click", flipCard);
-    pickedCards[1].element.parentElement.removeEventListener("click", flipCard);
+    pickedCards[0].element.removeEventListener("click", flipCard);
+    pickedCards[1].element.removeEventListener("click", flipCard);
+    console.log(pickedCards[0].element, "matched with", pickedCards[1].element);
     pickedCards = [];
     return;
   }
@@ -80,15 +83,17 @@ function setScore() {
   });
   console.log(unpairedRemainingCards);
   if (!unpairedRemainingCards.length) {
-    // restartParagraphsArray[0].style.display = "none";
     adviceParagraph.textContent = "Congratulations, you've finished the game!";
     numberOfTries === 6
       ? (attemptsParagraph.textContent = `Final score: ${numberOfTries}, you hit the highest possible score, amazing!`)
       : (attemptsParagraph.textContent = `Final score: ${numberOfTries}`);
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
+
+    setTimeout(() => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    }, 650);
 
     return;
   }

@@ -12,10 +12,10 @@ $card-bg-color: white;
 $selection-bg-color: #0041b3;
 $selection-text-color: white;
 
-$before-bg-color: #ffbe4c;
-$before-bg-color--checked: #0041b3;
-$after-bg-color: black;
-$after-bg-color--checked: white;
+$before-bg-color: #0041b3;
+$before-bg-color--checked: #ffbe4c;
+$after-bg-color: white;
+$after-bg-color--checked: black;
 
 
 //CSS variables
@@ -57,40 +57,31 @@ $after-bg-color--checked: white;
     $selection-bg-color: #ffbe4c;
     $selection-text-color: black;
 
-    $before-bg-color: #ffbe4c;
-    $before-bg-color--checked: #0041b3;
-    $after-bg-color: black;
-    $after-bg-color--checked: white;
+    $before-bg-color: #0041b3;
+    $before-bg-color--checked: #ffbe4c;
+    $after-bg-color: white;
+    $after-bg-color--checked: black;
 
-    :root {
-        --body-bg-color-primary: #{$body-bg-color-primary};
-        --body-bg-color-secondary: #{$body-bg-color-secondary};
-        --body-bg-color-primary--dark-theme: #{$body-bg-color-primary--dark-theme};
-        --body-bg-color-secondary--dark-theme: #{$body-bg-color-secondary--dark-theme};
-        --text-color: #{$text-color};
-        --shadow-color: #{$shadow-color};
-        --card-bg-color: #{$card-bg-color};
 
-        --selection-bg-color: #fff;
-        --selection-text-color: #{$selection-text-color};
+    --body-bg-color-primary: #{$body-bg-color-primary};
+    --body-bg-color-secondary: #{$body-bg-color-secondary};
+    --body-bg-color-primary--dark-theme: #{$body-bg-color-primary--dark-theme};
+    --body-bg-color-secondary--dark-theme: #{$body-bg-color-secondary--dark-theme};
+    --text-color: #{$text-color};
+    --shadow-color: #{$shadow-color};
+    --card-bg-color: #{$card-bg-color};
 
-        --near-transparent: #{$near-transparent};
+    --selection-bg-color: #{$selection-bg-color};
+    --selection-text-color: #{$selection-text-color};
 
-        --before-bg-color: #{$before-bg-color};
-        --before-bg-color--checked: #{$before-bg-color--checked};
+    --near-transparent: #{$near-transparent};
 
-        --after-bg-color: #{$after-bg-color};
-        --after-bg-color--checked: #{$after-bg-color--checked};
-    }
+    --before-bg-color: #{$before-bg-color};
+    --before-bg-color--checked: #{$before-bg-color--checked};
 
-    body {
-        background-position: 100% 0% !important;
-        // background-position: 100% 0%;
-    }
+    --after-bg-color: #{$after-bg-color};
+    --after-bg-color--checked: #{$after-bg-color--checked};
 
-    .theme {
-        background-position: 0% 0% !important;
-    }
 }
 
 .light-theme {
@@ -108,43 +99,34 @@ $after-bg-color--checked: white;
     $selection-bg-color: #0041b3;
     $selection-text-color: white;
 
-    $before-bg-color: #ffbe4c;
-    $before-bg-color--checked: #0041b3;
-    $after-bg-color: black;
-    $after-bg-color--checked: white;
+    $before-bg-color: #0041b3;
+    $before-bg-color--checked: #ffbe4c;
+    $after-bg-color: white;
+    $after-bg-color--checked: black;
 
 
     //CSS variables
 
-    :root {
-        --body-bg-color-primary: #{$body-bg-color-primary};
-        --body-bg-color-secondary: #{$body-bg-color-secondary};
-        --body-bg-color-primary--dark-theme: #{$body-bg-color-primary--dark-theme};
-        --body-bg-color-secondary--dark-theme: #{$body-bg-color-secondary--dark-theme};
-        --text-color: #{$text-color};
-        --shadow-color: #{$shadow-color};
-        --card-bg-color: #{$card-bg-color};
 
-        --selection-bg-color: #{$selection-bg-color};
-        --selection-text-color: #{$selection-text-color};
+    --body-bg-color-primary: #{$body-bg-color-primary};
+    --body-bg-color-secondary: #{$body-bg-color-secondary};
+    --body-bg-color-primary--dark-theme: #{$body-bg-color-primary--dark-theme};
+    --body-bg-color-secondary--dark-theme: #{$body-bg-color-secondary--dark-theme};
+    --text-color: #{$text-color};
+    --shadow-color: #{$shadow-color};
+    --card-bg-color: #{$card-bg-color};
 
-        --near-transparent: #{$near-transparent};
+    --selection-bg-color: #{$selection-bg-color};
+    --selection-text-color: #{$selection-text-color};
 
-        --before-bg-color: #{$before-bg-color};
-        --before-bg-color--checked: #{$before-bg-color--checked};
+    --near-transparent: #{$near-transparent};
 
-        --after-bg-color: #{$after-bg-color};
-        --after-bg-color--checked: #{$after-bg-color--checked};
-    }
+    --before-bg-color: #{$before-bg-color};
+    --before-bg-color--checked: #{$before-bg-color--checked};
 
-    body {
-        background-position: 100% 0% !important;
-        // background-position: 100% 0%;
-    }
+    --after-bg-color: #{$after-bg-color};
+    --after-bg-color--checked: #{$after-bg-color--checked};
 
-    .theme {
-        background-position: 0% 0% !important;
-    }
 }
 
 //Dark theme
@@ -164,10 +146,10 @@ $after-bg-color--checked: white;
     $selection-bg-color: #ffbe4c;
     $selection-text-color: black;
 
-    $before-bg-color: #ffbe4c;
-    $before-bg-color--checked: #0041b3;
-    $after-bg-color: black;
-    $after-bg-color--checked: white;
+    $before-bg-color: #0041b3;
+    $before-bg-color--checked: #ffbe4c;
+    $after-bg-color: white;
+    $after-bg-color--checked: black;
 
     :root {
         --body-bg-color-primary: #{$body-bg-color-primary};
@@ -191,61 +173,11 @@ $after-bg-color--checked: white;
     }
 
     body {
-        // background-position: 100% 0% !important;
         background-position: 100% 0%;
-    }
-
-    .theme {
-        background-position: 0% 0% !important;
     }
 
 }
 
-
-// @media (prefers-color-scheme: light) {
-//     //SASS variables
-//     $body-bg-color-primary: #d17608;
-//     $body-bg-color-secondary: #ec3503;
-//     $body-bg-color-primary--dark-theme: hsl(193, 85%, 20%);
-//     $body-bg-color-secondary--dark-theme: hsl(213, 69%, 10%);
-//     $text-color: white;
-
-//     $near-transparent: rgba(0, 0, 0, 0.1);
-//     $shadow-color: #00000033;
-//     $card-bg-color: white;
-
-//     $selection-bg-color: #0041b3;
-//     $selection-text-color: white;
-
-//     $before-bg-color: #ffbe4c;
-//     $before-bg-color--checked: #0041b3;
-//     $after-bg-color: black;
-//     $after-bg-color--checked: white;
-
-
-//     //CSS variables
-
-//     :root {
-//         --body-bg-color-primary: #{$body-bg-color-primary};
-//         --body-bg-color-secondary: #{$body-bg-color-secondary};
-//         --body-bg-color-primary--dark-theme: #{$body-bg-color-primary--dark-theme};
-//         --body-bg-color-secondary--dark-theme: #{$body-bg-color-secondary--dark-theme};
-//         --text-color: #{$text-color};
-//         --shadow-color: #{$shadow-color};
-//         --card-bg-color: #{$card-bg-color};
-
-//         --selection-bg-color: #{$selection-bg-color};
-//         --selection-text-color: #{$selection-text-color};
-
-//         --near-transparent: #{$near-transparent};
-
-//         --before-bg-color: #{$before-bg-color};
-//         --before-bg-color--checked: #{$before-bg-color--checked};
-
-//         --after-bg-color: #{$after-bg-color};
-//         --after-bg-color--checked: #{$after-bg-color--checked};
-//     }
-// }
 
 
 //Maps
@@ -330,7 +262,7 @@ kbd {
     border-radius: 4px;
     transition:
         scale 250ms ease-out;
-    perspective: 1500px;
+    perspective: 1250px;
     perspective-origin: top;
 
     &:hover {
@@ -402,15 +334,17 @@ body {
 
     top: 0;
     left: 0;
-    background-size: 350% 100%;
-    background-position: 100% 0;
     height: 125px;
     width: 125px;
     border-radius: 0 0 50% 0;
     @include center-flex-column;
     z-index: 70;
     transition: all 350ms ease-out;
-    // translate: -60px -60px;
+    translate: -65px -40px;
+
+    @include mobile-only {
+        translate: 0 0;
+    }
 
     &:hover {
         translate: 0px 0px;
@@ -418,9 +352,8 @@ body {
 
     &:hover+.blurred-bg {
         background-color: var(--near-transparent);
-
+        visibility: visible;
         -webkit-backdrop-filter: blur(2px);
-        // translate: 0% 0%;
         scale: 100%;
         backdrop-filter: blur(2px);
         z-index: 50;
@@ -433,6 +366,11 @@ body {
         @include center-flex;
         padding: 5px;
         z-index: 72;
+
+
+        &>p {
+            margin: 0 20px;
+        }
 
         &-label {
             background-color: transparent;
@@ -480,7 +418,7 @@ body {
             display: none;
 
             &:checked+.theme__toggler-label::after {
-                translate: 40% -50%;
+                translate: 45% -50%;
                 background-color: var(--after-bg-color--checked);
             }
 
@@ -497,16 +435,25 @@ body {
         display: none;
     }
 
+    border-radius: 0 0 100vmax 0;
     position: absolute;
     width: 200vw;
     height: 200vh;
     background-color: transparent;
-    // translate: -100% 0%;
     scale: 0%;
     transform-origin: top left;
     //
+    transition: visibility 350ms ease-out,
+    scale 350ms ease-in,
+    -webkit-backdrop-filter 350ms ease-out;
     transition: backdrop-filter 350ms ease-out,
+    visibility 350ms ease-out,
     scale 350ms ease-in;
+    transition: backdrop-filter 350ms ease-out,
+    visibility 350ms ease-out,
+    scale 350ms ease-in,
+    -webkit-backdrop-filter 350ms ease-out;
+    visibility: hidden;
     //
 }
 
@@ -565,14 +512,6 @@ body {
 
     &__card {
         @include card-styling;
-
-        // &:active>.main__card-front {
-        //     transform: rotateY(0deg);
-        // }
-
-        // &:active>.main__card-back {
-        //     transform: rotateY(-180deg);
-        // }
 
         &-front {
             @include card-faces-styling;
