@@ -1,13 +1,17 @@
 {
   "name": "9.-memorycard",
   "version": "1.0.0",
-  "description": "",
+  "description": "memory card game",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "sass": "sass -w ./style.scss:./style.css -c -s compressed"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "author": " LePhenix47",
+  "license": "ISC",
+    "repository": {
+    "type": "git",
+    "url": "https://github.com/LePhenix47/Memory-card-game_Younes-Lahouiti"
+  }
 }
