@@ -27,10 +27,7 @@ function switchTheme() {
 }
 
 function checkTheBoxIfUsesDarkMode() {
-  if (
-    window.matchMedia("(prefers-color-scheme: dark)") &&
-    window.matchMedia("(prefers-color-scheme: dark)").matches
-  ) {
+  if (window?.matchMedia("(prefers-color-scheme: dark)")?.matches) {
     console.log("Users uses dark mode on their device");
     checkboxToggler.checked = true;
     usesDarkMode = true;

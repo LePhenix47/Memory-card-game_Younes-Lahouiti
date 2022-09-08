@@ -309,11 +309,7 @@ body {
         background-position 550ms ease-out;
     min-height: 100vh;
     overflow-x: hidden;
-    overflow-y: hidden;
-
-    @include mobile-only {
-        overflow-y: scroll;
-    }
+    overflow-y: auto;
 
     background-image: linear-gradient(to right, var(--body-bg-color-primary), var(--body-bg-color-secondary), var(--body-bg-color-primary--dark-theme), var(--body-bg-color-secondary--dark-theme));
     background-size: 350% 100%;

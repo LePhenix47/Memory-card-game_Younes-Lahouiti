@@ -1,13 +1,13 @@
 {
   "name": "9.-memorycard",
   "version": "1.0.0",
-  "description": "",
+  "description": "This repo contains the script to execute the SASS file for the memory card cgame",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "sass": "sass -w ./style.scss:./style.css -c -s compressed"
   },
   "keywords": [],
-  "author": "",
+  "author": "Younes Lahouiti",
   "license": "ISC"
 }
