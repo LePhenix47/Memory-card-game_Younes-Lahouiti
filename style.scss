@@ -349,9 +349,9 @@ body {
     &:hover+.blurred-bg {
         background-color: var(--near-transparent);
         visibility: visible;
+        backdrop-filter: blur(2px);
         -webkit-backdrop-filter: blur(2px);
         scale: 100%;
-        backdrop-filter: blur(2px);
         z-index: 50;
     }
 
@@ -431,26 +431,19 @@ body {
         display: none;
     }
 
-    border-radius: 0 0 100vmax 0;
+    border-radius: 0 100vmax 100vmax 0;
     position: absolute;
     width: 200vw;
-    height: 200vh;
+    height: 100vh;
     background-color: transparent;
+    visibility: hidden;
     scale: 0%;
     transform-origin: top left;
     //
     transition: visibility 350ms ease-out,
     scale 350ms ease-in,
     -webkit-backdrop-filter 350ms ease-out;
-    transition: backdrop-filter 350ms ease-out,
-    visibility 350ms ease-out,
-    scale 350ms ease-in;
-    transition: backdrop-filter 350ms ease-out,
-    visibility 350ms ease-out,
-    scale 350ms ease-in,
-    -webkit-backdrop-filter 350ms ease-out;
-    visibility: hidden;
-    //
+
 }
 
 .main {
