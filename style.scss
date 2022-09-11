@@ -262,6 +262,7 @@ kbd {
     border-radius: 4px;
     transition:
         scale 250ms ease-out;
+    transform-style: preserve-3d;
     perspective: 1250px;
     perspective-origin: top;
 
